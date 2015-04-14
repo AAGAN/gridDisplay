@@ -2,9 +2,12 @@ from Tkinter import *
 
 
 class bucket:
+
     rows = 0
     cols = 0
     values = "text"
+    active = 0
+    
     def __init__(self, master, row, col, value):
         self.rows = row
         self.cols = col
@@ -14,15 +17,20 @@ class bucket:
 
     def activatee(self):
         self.button.configure(bg = "red")
+        self.active = 1
+
+    def deactivate(self):
+        self.active = 0
         
     
 
 root = Tk()
 #root.title("gridDisplay")
-#root.geometry("500x500")
+root.geometry("500x500")
 
-bucket1 = bucket(root, row = 0, col = 0, value = "0.010")
-bucket2 = bucket(root, row = 0, col = 1, value = "0.015")
+buckets = [bucket(root, row = 0, col = count, value = str(count)) for count in xrange(10)]
+
+
 
 
 root.mainloop()
