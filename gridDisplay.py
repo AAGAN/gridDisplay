@@ -1,6 +1,5 @@
 from Tkinter import *
 
-
 class bucket:
 
     rows = 0
@@ -22,16 +21,11 @@ class bucket:
     def deactivate(self):
         self.active = 0
         
-    
-
 root = Tk()
 #root.title("gridDisplay")
-root.geometry("500x500")
+#root.geometry("500x500")
 
 buckets = [bucket(root, row = 0, col = count, value = str(count)) for count in xrange(10)]
-
-
-
 
 root.mainloop()
 
